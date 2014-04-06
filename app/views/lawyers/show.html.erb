@@ -3,4 +3,7 @@
 <p><%= @lawyer.location %></p>
 <p><%= @lawyer.experience %></p>
 <p><%= @lawyer.rating %></p>
+<%= link_to "Delete", lawyer_path(@lawyer), method: :delete, data: {confirm: "You really wanna delete this record?"} %>
+<%= link_to "Add Lawyers", new_lawyer_path %>
+<%= link_to "Edit Lawyers", edit_lawyer_path %>
 <%= link_to "Lawyers List", lawyers_path %>
