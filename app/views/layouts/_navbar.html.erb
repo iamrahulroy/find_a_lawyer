@@ -8,11 +8,13 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <li><%= link_to 'LawyerFinder', root_path, class: 'navbar-brand' %></li>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
+            <li><%= link_to 'LawyerFinder', root_path, class: 'btn' %></li>
             <li><%= link_to 'Lawyers', lawyers_path, class: 'btn' %></li>
+            <li><%= link_to 'New Lawyers', new_lawyer_path, class: 'btn' %></li>
             <li><%= link_to 'Services', services_path, class: 'btn' %><li>
+            <li><%= link_to 'New Services', new_service_path, class: 'btn' %><li>
            </ul>
     </div>
   </div>
