@@ -1,6 +1,6 @@
 == README
 
-Lawyer finder application.
+Lawyer finder application. [Demo on Heroku](http://obscure-inlet-9662.herokuapp.com/)
 
 ### Things you may want to cover:
 
