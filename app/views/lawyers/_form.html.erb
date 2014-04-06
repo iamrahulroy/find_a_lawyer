@@ -6,25 +6,25 @@
   </ul>
   <p>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'User', required: 'required' %>
   </p>
   <p>
     <%= f.label :location %><br />
-    <%= f.text_field :location %>
+    <%= f.text_field :location, class: 'form-control', placeholder: 'User', required: 'required' %>
   </p>
   <p>
     <%= f.label :code %><br />
-    <%= f.text_field :code %>
+    <%= f.text_field :code, class: 'form-control', placeholder: 'User', required: 'required' %>
   </p>
   <p>
     <%= f.label :experience %><br />
-    <%= f.text_field :experience %>
+    <%= f.text_field :experience, class: 'form-control', placeholder: 'User', required: 'required' %>
   </p>
   <p>
     <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+    <%= f.text_field :rating, class: 'form-control', placeholder: 'User', required: 'required' %>
   </p>
-  <p>
-    <%= f.submit %>
+  <p class="submit">
+    <%= f.submit class: 'btn btn-primary' %>
   </p>
 <% end %>

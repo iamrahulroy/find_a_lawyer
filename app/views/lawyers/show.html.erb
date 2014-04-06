@@ -1,9 +1,27 @@
-<h1><%= @lawyer.name %></h1>
-<p><%= @lawyer.code %></p>
-<p><%= @lawyer.location %></p>
-<p><%= @lawyer.experience %></p>
-<p><%= @lawyer.rating %></p>
-<%= link_to "Delete", lawyer_path(@lawyer), method: :delete, data: {confirm: "You really wanna delete this record?"} %>
-<%= link_to "Add Lawyers", new_lawyer_path %>
-<%= link_to "Edit Lawyers", edit_lawyer_path %>
-<%= link_to "Lawyers List", lawyers_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Lawyer Name</th>
+      <th>Lawyer Code</th>
+      <th>Location</th>
+      <th>Year of Experience</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @lawyer.name %></td>
+        <td><%= @lawyer.code %></td>
+        <td><%= @lawyer.location %></td>
+        <td><%= @lawyer.experience %></td>
+        <td><%= @lawyer.rating %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to "Delete", lawyer_path(@lawyer), class: 'btn btn-danger', method: :delete, data: {confirm: "You really wanna delete this record?"} %>
+<%= link_to "Add Lawyers", new_lawyer_path, class: 'btn btn-info' %>
+<%= link_to "Edit Lawyers", edit_lawyer_path, class: 'btn btn-warning' %>
+<%= link_to "Lawyers List", lawyers_path, class: 'btn btn-info' %>

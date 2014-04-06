@@ -1,12 +1,13 @@
 <h1>Listing services</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Code</th>
       <th>Scode</th>
       <th>Sname</th>
       <th>Charges</th>
+      <th>Actions</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,9 @@
         <td><%= service.scode %></td>
         <td><%= service.sname %></td>
         <td><%= service.charges %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', service, class: 'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_service_path(service), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', service, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'New Service', new_service_path, class: 'btn btn-info' %>

@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Code:</strong>
-  <%= @service.code %>
-</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Scode</th>
+      <th>Sname</th>
+      <th>Charges</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Scode:</strong>
-  <%= @service.scode %>
-</p>
+  <tbody>
+      <tr>
+        <td><%= @service.code %></td>
+        <td><%= @service.scode %></td>
+        <td><%= @service.sname %></td>
+        <td><%= @service.charges %></td>
+        <td><%= link_to 'Edit', edit_service_path(@service), class: 'btn btn-info' %></td>
+        <td><%= link_to 'Back', services_path, class: 'btn btn-info' %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Sname:</strong>
-  <%= @service.sname %>
-</p>
 
-<p>
-  <strong>Charges:</strong>
-  <%= @service.charges %>
-</p>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+
+
+
+

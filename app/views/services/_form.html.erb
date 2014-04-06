@@ -13,21 +13,21 @@
 
   <div class="field">
     <%= f.label :code %><br>
-    <%= f.text_field :code %>
+    <%= f.text_field :code, class: 'form-control', placeholder: 'User', required: 'required' %>
   </div>
   <div class="field">
     <%= f.label :scode %><br>
-    <%= f.text_field :scode %>
+    <%= f.text_field :scode, class: 'form-control', placeholder: 'User', required: 'required' %>
   </div>
   <div class="field">
     <%= f.label :sname %><br>
-    <%= f.text_field :sname %>
+    <%= f.text_field :sname, class: 'form-control', placeholder: 'User', required: 'required' %>
   </div>
   <div class="field">
     <%= f.label :charges %><br>
-    <%= f.number_field :charges %>
+    <%= f.number_field :charges, class: 'form-control', placeholder: 'User', required: 'required' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-info' %>
   </div>
 <% end %>
