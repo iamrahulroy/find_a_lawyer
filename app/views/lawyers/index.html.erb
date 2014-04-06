@@ -1,0 +1,10 @@
+<h1>List Lawyers</h1>
+
+<ul id="lawyers">
+  <% @lawyers.each do |lawyer| %>
+    <li>
+      <%= link_to lawyer.name, lawyer_path(lawyer) %>
+    </li>
+  <% end %>
+</ul>
+
