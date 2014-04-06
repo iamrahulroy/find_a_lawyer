@@ -1,5 +1,10 @@
 <h1>List Lawyers</h1>
 
+<%= form_tag(lawyers_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search lawyers" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -28,8 +33,5 @@
     <% end %>
   </tbody>
 </table>
-
-<% options = options_from_collection_for_select(@lawyers, 'id', 'name') %>
-
 
 <%= link_to "Add Lawyers", new_lawyer_path, class: 'btn btn-info' %>

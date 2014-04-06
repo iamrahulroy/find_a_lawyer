@@ -3,6 +3,11 @@ class LawyersController < ApplicationController
 
   def index
     @lawyers = Lawyer.all
+    if params[:search]
+      @lawyers = Lawyer.search(params[:search]).order("created_at DESC")
+    else
+      @lawyers = Lawyer.all.order('created_at DESC')
+    end
   end
 
   def show

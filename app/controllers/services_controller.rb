@@ -3,6 +3,11 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+    if params[:search]
+      @services = Service.search(params[:search]).order("created_at DESC")
+    else
+      @services = Service.all.order('created_at DESC')
+    end
   end
 
   def show
