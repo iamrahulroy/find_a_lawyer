@@ -29,7 +29,7 @@
   </tbody>
 </table>
 
-
+<% options = options_from_collection_for_select(@lawyers, 'id', 'name') %>
 
 
 <%= link_to "Add Lawyers", new_lawyer_path, class: 'btn btn-info' %>
