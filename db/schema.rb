@@ -23,17 +23,6 @@ ActiveRecord::Schema.define(version: 20140406122344) do
     t.datetime "updated_at"
   end
 
-  create_table "service_lists", force: true do |t|
-    t.string   "code"
-    t.string   "scode"
-    t.string   "sname"
-    t.integer  "charges"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "service_lists", ["code"], name: "index_service_lists_on_code"
-
   create_table "services", force: true do |t|
     t.string   "code"
     t.string   "scode"
