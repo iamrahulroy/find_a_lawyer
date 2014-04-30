@@ -3,11 +3,16 @@ class LawyersController < ApplicationController
 
   def index
     @lawyers = Lawyer.all
-    if params[:search]
-      @lawyers = Lawyer.search(params[:search]).order("created_at DESC")
-    else
-      @lawyers = Lawyer.all.order('created_at DESC')
-    end
+    # if params[:search]
+    #   @lawyers = Lawyer.search(params[:search]).order("created_at DESC")
+    # else
+    #   @lawyers = Lawyer.all.order('created_at DESC')
+    # end
+    # ---------
+    # @query = Lawyer.search do
+    #   fulltext params[:search]
+    # end
+    # @lawyers = @query.results
   end
 
   def show
@@ -43,5 +48,16 @@ class LawyersController < ApplicationController
     flash.notice = "Lawyer '#{@lawyer.name}' Updated!"
 
     redirect_to lawyers_path
+  end
+
+  def search
+    @lawyers = Lawyer.search do
+      keywords params[:query]
+    end.results
+
+    respond_to do |format|
+      format.html { render action: "index" }
+      format.xml { render xml: @lawyers }
+    end
   end
 end

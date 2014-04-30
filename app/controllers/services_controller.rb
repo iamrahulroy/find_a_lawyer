@@ -3,11 +3,12 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
-    if params[:search]
-      @services = Service.search(params[:search]).order("created_at DESC")
-    else
-      @services = Service.all.order('created_at DESC')
-    end
+    # if params[:search]
+    #   @services = Service.search(params[:search]).order("created_at DESC")
+    # else
+    #   @services = Service.all.order('created_at DESC')
+    # end
+
   end
 
   def show
@@ -51,6 +52,17 @@ class ServicesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to services_url }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    @services = Service.search do
+      keywords params[:query]
+    end.results
+
+    respond_to do |format|
+      format.html { render action: "index" }
+      format.xml { render xml: @services }
     end
   end
 

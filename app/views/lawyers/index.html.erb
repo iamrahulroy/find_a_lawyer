@@ -1,8 +1,9 @@
 <h1>List Lawyers</h1>
 
-<%= form_tag(lawyers_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search lawyers" %>
-  <%= submit_tag "Search", :name => nil, class: 'btn btn-info' %>
+<%= form_tag(search_lawyers_path, :method => :get, id: "search-form") do %>
+<p>
+  <%= text_field_tag :query, params[:query], placeholder: "Search here.." %> <%= submit_tag "Search", class: 'btn btn-info' %>
+</p>
 <% end %>
 
 <table class="table table-striped">
